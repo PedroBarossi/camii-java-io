@@ -1,3 +1,5 @@
+package caracteres;
+
 import java.io.*;
 
 /*Abra o teclado para escrever três filmes que você

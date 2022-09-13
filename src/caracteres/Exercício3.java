@@ -1,3 +1,5 @@
+package caracteres;
+
 import java.io.*;
 
 /*Faça uma cópia do arquivo recomendacoes.txt e adicione
