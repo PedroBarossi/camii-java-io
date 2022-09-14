@@ -46,11 +46,36 @@ public class Exercicio5 {
         double preco = scan.nextDouble();
         dos.writeDouble(preco);
 
+        ps.printf("O arquivo %s foi criado com %d bytes no diretório '%s'.\n",
+                f.getName(), f.length(), f.getAbsolutePath());
+
+        lerProduto(f.getPath());
+
         dos.close();
         scan.close();
+        ps.close();
     }
 
-    public static void lerProduto(String arquivo) {
+    public static void lerProduto(String caminhoArquivo) throws IOException {
+
+        File f = new File(caminhoArquivo);
+
+        /*InputStream is = new FileInputStream(f.getPath());
+        DataInputStream dis = new DataInputStream(is);*/
+        DataInputStream dis = new DataInputStream(new FileInputStream(f.getPath()));
+
+        String nome = dis.readUTF();
+        char tamanho = dis.readChar();
+        int quantidade = dis.readInt();
+        double preco = dis.readDouble();
+
+        System.out.printf("\nNome.....................: %s\n", nome);
+        System.out.printf("Tamanho..................: %s\n", tamanho);
+        System.out.printf("Quantidade...............: %d\n", quantidade);
+        System.out.printf("Peça.....................: %f\n", preco);
+        System.out.print("Total do valor das peças: " + (quantidade * preco));
+
+        dis.close();
 
     }
 }

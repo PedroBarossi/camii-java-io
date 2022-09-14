@@ -1,2 +1,1 @@
-# camii-java-io
- Aula de Java IO
+Repositório de referência feito acompanhando a aula de I/O em Java da [Camila Cavalcante](https://github.com/cami-la) na [DIO](we.dio.me)
